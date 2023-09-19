@@ -196,6 +196,8 @@ type Position @entity {
   # owner of the NFT
   owner: Bytes!
   # pool position is within
+  staker: String
+  # staker of the NFT
   pool: Pool!
   # allow indexing by tokens
   token0: Token!

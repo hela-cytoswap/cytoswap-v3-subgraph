@@ -81,9 +81,9 @@ function savePositionSnapshot(position: Position, event: ethereum.Event): void {
 
 export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   // temp fix
-  if (event.block.number.equals(BigInt.fromI32(14317993))) {
-    return
-  }
+  // if (event.block.number.equals(BigInt.fromI32(14317993))) {
+  //   return
+  // }
 
   let position = getPosition(event, event.params.tokenId)
 
@@ -93,9 +93,9 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   }
 
   // temp fix
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
-    return
-  }
+  // if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  //   return
+  // }
 
   let token0 = Token.load(position.token0)
   let token1 = Token.load(position.token1)
@@ -116,9 +116,9 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
 
 export function handleDecreaseLiquidity(event: DecreaseLiquidity): void {
   // temp fix
-  if (event.block.number == BigInt.fromI32(14317993)) {
-    return
-  }
+  // if (event.block.number == BigInt.fromI32(14317993)) {
+  //   return
+  // }
 
   let position = getPosition(event, event.params.tokenId)
 
@@ -128,9 +128,9 @@ export function handleDecreaseLiquidity(event: DecreaseLiquidity): void {
   }
 
   // temp fix
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
-    return
-  }
+  // if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  //   return
+  // }
 
   let token0 = Token.load(position.token0)
   let token1 = Token.load(position.token1)
@@ -152,9 +152,9 @@ export function handleCollect(event: Collect): void {
   if (position == null) {
     return
   }
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
-    return
-  }
+  // if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  //   return
+  // }
 
   let token0 = Token.load(position.token0)
   let amount0 = convertTokenToDecimal(event.params.amount0, token0.decimals)
